@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>home page</title>
+ <link rel="stylesheet" type="text/css" href="../static/home.css">
+ 
+</head>
+<body>
+  {% extends 'layout.html' %}
+  {% block content %} 
+
+  <div class="container">
+ <article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}" alt="">
+  <div class="media-body">
+    <div class="article-metadata" >
+      <a class="mr-2" href="#" > {{ post.author.username }} </a>
+      <small class="text-muted"> {{ post.date_posted.strftime('%Y-%m-%d') }} </small>
+    </div>
+    <h2 class="article-title" href="#">  {{ post.title }} </h2>
+    <p class="content mr-2" href="#"> {{ post.content }} </p>
+  </div>
+ </article>
+</div>
+  
+{% endblock content %}
+</body>
+</html>
