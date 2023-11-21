@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ {% extends 'layout.html' %}
+ {% block content %} 
+
+ <div>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for with_category, message in messages %}
+        <div class="alert alert-{{ with_category }}">
+          {{ message }}
+        </div>
+      {% endfor %}  
+    {% endif %}
+  {% endwith %}
+</div>
+ <h1>{{ message }} welcome to you dashboard</h1>
+ {% endblock %}
+</body>
+</html>
