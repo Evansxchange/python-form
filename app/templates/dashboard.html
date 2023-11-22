@@ -20,7 +20,8 @@
     {% endif %}
   {% endwith %}
 </div>
- <h1>{{ message }} welcome to you dashboard {{ post.author }}</h1>
+ <h1 class="text-center fs-4 mt-2 text-secondary fw-bold"> welcome to you dashboard <br> <span class="text-success fw-bold fs-1"> {{ current_user.username }} </span></h1>
+ <img class="rounded-circle account-img" src="{{ image_file }}">
  {% endblock %}
 </body>
 </html>
